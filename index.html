@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성사중학교 시험 알리미</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="topbar">
+        <div class="topbar-content" style="display: flex; justify-content: flex-start; align-items: center; width: 100%; padding-right: 20px;">
+            <p style="text-align: left; margin-left: 60px; color: white; font-size: 24px; margin-right: 50px; font-family: 'Ownglyph_ParkDaHyun', sans-serif; background: linear-gradient(to bottom right, rgb(255, 82, 39), rgb(255, 243, 73)); color: transparent; -webkit-background-clip: text; box-sizing: border-box; letter-spacing: 1px;">
+                <strong>성사중학교 시험 알리미</strong>
+            </p>
+            <button id="announcementBtn" class="topbar-item buttons" style="margin-right: 10px;">공지</button>
+            <button id="1rd_gradeBtn" class="topbar-item buttons" style="margin-right: 10px;">1학년</button>
+            <button id="2rd_gradeBtn" class="topbar-item buttons" style="margin-right: 10px;">2학년</button>
+            <button id="3rd_gradeBtn" class="topbar-item buttons" style="margin-right: 10px;">3학년</button>
+            <button id="school_site" class="topbar-item buttons" style="margin-right: 10px;">학교사이트</button>
+            <button id="privacy_policy" class="topbar-item buttons" style="margin-right: 10px;">개인정보 처리 방침</button>
+            <div style="margin-left: auto; padding-right: 20px; display: flex; align-items: center;">
+                <button id="login-btn" class="topbar-item google-button" style="margin-left: 20px;">
+                    <img src="image/google.png" alt="Google Logo" class="google-image" />
+                    <span class="google-text">Login with Google</span>
+                </button>
+                <button id="logout-btn" class="topbar-item" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closeBtn" class="close-btn">&times;</span>
+            <h2>성사중학교 시험 알리미 - 개인정보 처리방침</h2>
+            <p>성사중학교 시험 알리미 웹사이트(이하 "본 사이트")는 이용자의 개인정보를 소중하게 다루고 있으며, 본 방침은 개인정보의 처리 방침에 대한 내용을 설명합니다. 본 사이트에 접속하거나 서비스를 이용함으로써 본 방침에 동의하는 것으로 간주됩니다.</p>
+
+            <h3>1. 수집하는 개인정보 항목</h3>
+            <ul>
+                <li><strong>로그인 시 구글 계정 정보:</strong> 사용자가 구글 계정을 이용해 로그인할 경우, 구글 계정의 기본 정보(이름, 이메일 등)를 수집합니다. 이 정보는 로그인 기능 제공을 위해 1년 동안 보관됩니다.</li>
+                <li><strong>게시물 작성 시 작성자의 정보:</strong> 사용자가 게시물을 작성할 때, 해당 게시물에 작성자의 정보가 포함됩니다. 이 정보는 게시물이 삭제될 때까지 보유됩니다.</li>
+                <li><strong>접속 시 접속 정보:</strong> 본 사이트에 접속하는 동안, 이용자의 IP 주소, 브라우저 종류, 방문 시간 등 접속 정보를 수집하며, 이 정보는 1일간 보유됩니다.</li>
+            </ul>
+
+            <h3>2. 개인정보의 이용 목적</h3>
+            <ul>
+                <li><strong>로그인 기능 제공:</strong> 구글 계정 정보를 이용해 사용자가 본 사이트에 로그인할 수 있도록 지원합니다.</li>
+                <li><strong>게시물 관리:</strong> 게시물 작성 시 사용자의 정보를 게시물과 연결하여 작성자 정보를 표시하며, 게시물 삭제 시 해당 정보도 함께 삭제됩니다.</li>
+                <li><strong>접속 정보 분석:</strong> 접속 정보를 통해 본 사이트의 이용 현황을 분석하고, 서비스 개선에 활용됩니다.</li>
+            </ul>
+
+            <h3>3. 개인정보의 보유 및 이용 기간</h3>
+            <ul>
+                <li>구글 계정 정보는 1년 동안 보유됩니다.</li>
+                <li>게시물 작성자의 정보는 게시물이 삭제될 때까지 보유됩니다.</li>
+                <li>접속 정보는 1일 동안 보유됩니다.</li>
+            </ul>
+
+            <h3>4. 개인정보의 제3자 제공</h3>
+            <p>본 사이트는 이용자의 개인정보를 제3자에게 제공하지 않습니다.</p>
+
+            <h3>5. 개인정보 보호</h3>
+            <p>본 사이트는 이용자의 개인정보를 보호하기 위해 필요한 보안 조치를 취하고 있으며, 개인정보 유출 방지를 위한 기술적, 관리적 조치를 강화하고 있습니다.</p>
+
+            <h3>6. 개인정보 처리방침의 변경</h3>
+            <p>본 개인정보 처리방침은 법령의 개정, 서비스의 변경 또는 기타 사유로 인해 수정될 수 있습니다. 변경된 사항은 본 사이트에서 공지사항을 통해 안내합니다.</p>
+        </div>
+    </div>
+    
+    <div id="user-info" style="margin-top: 20px;"></div>
+    <div id="threerd_grade_test" style="display: none;">
+        <p>This page is being prepared.</p>
+    </div>
+    <div id="onerd_grade_test" style="display: none;">
+        <p>This page is being prepared.</p>
+    </div>
+
+    <h2 id="info" style="display: flex; justify-self: flex-start; align-items: center; font-family: 'GowunDodum-Regular'; padding-right: 20px;">게시물 목록</h2>
+    <div id="posts" style="display: none;"></div>
+
+    <div id="announcements" style="display: block;">
+    </div>
+    <p id="Loading">Loading...</p>
+
+    <div id="input-div" style="display: flex; justify-content: flex-start; align-items: center;">
+        <form id="announcement-form" style="display: none;">
+            <textarea id="announcement-content" placeholder="공지 내용을 입력하세요" required></textarea>
+            <button type="submit">공지 올리기</button>
+        </form>
+    
+        <form id="post-form" style="display: none;">
+            <input type="text" id="post-title" placeholder="게시물의 제목을 입력하세요" required />
+            <textarea id="post-content" placeholder="게시물의 내용을 입력하세요" required></textarea>
+            <button type="submit">Post</button>
+        </form>
+    </div>
+    <script type="module" src="firebase.js" defer></script>
+    <script src="main.js"></script>
+</body>
