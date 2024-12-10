@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+import { getAuth, signInWithPopup, signInWithRedirect, GoogleAuthProvider, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 import { getFirestore, doc, getDoc, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -24,16 +24,14 @@ const postContent = document.getElementById("post-content");
 // XSS 방지
 
 function escapeHtml(str) {
-    return str.replace(/[&<>"']/g, (char) => {
-        switch (char) {
-            case '&': return '&amp;';
-            case '<': return '&lt;';
-            case '>': return '&gt;';
-            case '"': return '&quot;';
-            case "'": return '&#39;';
-        }
-    }).replace(/\n/g, '<br />');
+    const allowedTags = ['br'];
+    return str.replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/&lt;(\/?)(\w+)&gt;/g, (match, slash, tagName) => {
+                  return allowedTags.includes(tagName) ? `<${slash}${tagName}>` : match;
+              });
 }
+
 
 loginBtn.addEventListener("click", async () => {
     try {
