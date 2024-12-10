@@ -21,6 +21,8 @@ const userInfoDiv = document.getElementById("user-info");
 const postForm = document.getElementById("post-form");
 const postContent = document.getElementById("post-content");
 
+// XSS 방지
+
 function escapeHtml(str) {
     return str.replace(/[&<>"']/g, (char) => {
         switch (char) {
