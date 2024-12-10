@@ -32,7 +32,7 @@ function escapeHtml(str) {
             case '"': return '&quot;';
             case "'": return '&#39;';
         }
-    }).replace(/\n/g, '<br>');
+    }).replace(/\n/g, '<br />');
 }
 
 loginBtn.addEventListener("click", async () => {
