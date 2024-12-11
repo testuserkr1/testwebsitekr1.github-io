@@ -104,7 +104,6 @@ const loadPosts = async () => {
             if (userDoc.exists()) {
                 const userData = userDoc.data();
                 authorName = userData.displayName || "Unknown";
-                console.log(userData)
             }
 
             postDiv.innerHTML = `
@@ -168,7 +167,6 @@ document.addEventListener("click", async (e) => {
 
         const postBox = e.target.closest(".post-box");
         const postId = postBox ? postBox.dataset.postId : null;
-        console.log("PostId:", postId);
 
         if (!postId) {
             console.error("PostId를 찾을 수 없습니다.");
