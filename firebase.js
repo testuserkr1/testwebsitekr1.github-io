@@ -22,6 +22,8 @@ const userInfoDiv = document.getElementById("user-info");
 const postForm = document.getElementById("post-form");
 const postContent = document.getElementById("post-content");
 
+// XSS 방지
+
 function escapeHtml(str) {
     const allowedTags = ['br'];
     return str.replace(/</g, '&lt;')
@@ -182,7 +184,7 @@ document.addEventListener("click", async (e) => {
 });
 
 const addComment = async (postId, content, userId) => {
-    const formattedContent = escapeHtml(content);
+    const formattedContent = escapeHtml("<br>"+content);
 
     if (content.length > 500) {
         alert("댓글은 500자 이하로 작성해 주세요.");
