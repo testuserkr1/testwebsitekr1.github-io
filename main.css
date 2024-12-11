@@ -42,11 +42,21 @@
 .comments-form {
     z-index: 999;
     border: 1px solid #ddd;
+    width: 100%; 
+    display: flex;
+    align-items: center;
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px;
     margin: 10px 0;
     background-color: #f9f9f9;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.comments-content {
+    flex: 1;
+    margin-right: 10px;
+    resize: none;
 }
 
 .post-header {
@@ -298,5 +308,25 @@ ul li {
 
     #top-close-btn {
         display: block;
+    }
+
+    .comments-form {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .comments-content {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 10px 0;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        margin-top: 10px;
     }
 }
