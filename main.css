@@ -178,6 +178,10 @@ button[type="submit"]:hover {
     background-color: #4e91fd;
 }
 
+.hide-class {
+    display: none;
+}
+
 form {
     background-color: #fff;
     padding: 20px;
@@ -235,6 +239,10 @@ ul li {
     cursor: pointer;
 }
 
+#top-close-btn {
+    display: none;
+}
+
 @media (max-width: 768px) {
     .topbar-content {
         flex-direction: column;
@@ -266,5 +274,9 @@ ul li {
 
     .announcement-content, .announcement-footer {
         font-size: 0.9em;
+    }
+
+    #top-close-btn {
+        display: block;
     }
 }
