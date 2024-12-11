@@ -61,6 +61,8 @@ loginBtn.addEventListener("click", async () => {
                 loginBtn.style.display = "none";
                 logoutBtn.style.display = "inline-block";
                 postForm.style.display = "block";
+                loadPosts();
+                loadAnnouncements();
             } else {
                 userInfoDiv.innerHTML = `
                     <p><strong>성사중학교 시험 알리미에 오신 것을 환영합니다. ${escapeHtml(user.displayName)}님!</strong></p>
@@ -68,6 +70,8 @@ loginBtn.addEventListener("click", async () => {
                 loginBtn.style.display = "none";
                 logoutBtn.style.display = "inline-block";
                 postForm.style.display = "none";
+                loadPosts();
+                loadAnnouncements();
             }
         }
     } catch (error) {
