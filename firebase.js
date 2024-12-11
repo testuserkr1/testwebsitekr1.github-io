@@ -30,7 +30,8 @@ function escapeHtml(str) {
               .replace(/>/g, '&gt;')
               .replace(/&lt;(\/?)(\w+)&gt;/g, (match, slash, tagName) => {
                   return allowedTags.includes(tagName) ? `<${slash}${tagName}>` : match;
-              });
+              })
+              .replace(/\n/g, '<br>');
 }
 
 loginBtn.addEventListener("click", async () => {
@@ -179,9 +180,16 @@ document.addEventListener("click", async (e) => {
 });
 
 const addComment = async (postId, content, userId) => {
+    const formattedContent = escapeHtml(content);
+
+    if (content.length > 500) {
+        alert("댓글은 500자 이하로 작성해 주세요.");
+        return;
+    }
+
     await addDoc(collection(db, "comments"), {
         postId,
-        content,
+        content: formattedContent,
         timestamp: new Date(),
         userId,
     });
@@ -201,7 +209,7 @@ document.addEventListener("submit", async (e) => {
         } else {
             alert("로그인 후 댓글을 작성할 수 있습니다.");
         }
-    }
+    }z
 });
 
 const loadComments = async (postId) => {
