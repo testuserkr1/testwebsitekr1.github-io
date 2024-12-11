@@ -125,7 +125,7 @@ const loadPosts = async () => {
                         <textarea class="comments-content" placeholder="댓글을 입력하세요" required style="flex: 2; margin-right: 10px;"></textarea>
                         <button type="submit">댓글 올리기</button>
                     </form>
-                    <div id="comments-${postDoc.id}" class="post-comments"></div>
+                    <div id="comments-${escapeHtml(postDoc.id)}" class="post-comments"></div>
                 </div>
             `;
             postsDiv.appendChild(postDiv);
