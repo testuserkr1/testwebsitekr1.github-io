@@ -33,7 +33,6 @@ function escapeHtml(str) {
               });
 }
 
-
 loginBtn.addEventListener("click", async () => {
     try {
         const result = await signInWithPopup(auth, provider);
@@ -120,8 +119,8 @@ const loadPosts = async () => {
                         <strong>Writer: ${escapeHtml(authorName)}</strong>
                         <small>/ ${new Date(post.timestamp.seconds * 1000).toLocaleString()}</small>
                     </div>
-                    <form class="comments-form" data-post-id="${postDoc.id}" style="display: flex; align-items: center; width: 100%;">
-                        <textarea class="comments-content" placeholder="댓글을 입력하세요" required style="flex: 2; margin-right: 10px;"></textarea>
+                    <form class="comments-form" data-post-id="${postDoc.id}" style="display: flex; align-items: center;">
+                        <textarea class="comments-content" placeholder="댓글을 입력하세요" required style="flex: 1; margin-right: 10px;"></textarea>
                         <button type="submit">댓글 올리기</button>
                     </form>
                     <div id="comments-${escapeHtml(postDoc.id)}" class="post-comments"></div>
