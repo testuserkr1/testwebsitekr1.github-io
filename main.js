@@ -4,14 +4,44 @@ window.addEventListener("load", () => {
     document.body.style.marginTop = `${topbarHeight+20}px`;
 });
 
-const annBtn = document.getElementById("announcementBtn");
-const twordBtn = document.getElementById("2rd_gradeBtn");
-const onerdBtn = document.getElementById("1rd_gradeBtn");
-const threerdBtn = document.getElementById("3rd_gradeBtn");
+const annBtn = document.getElementById("announcement-btn");
+const twordBtn = document.getElementById("2rd_grade-btn");
+const onerdBtn = document.getElementById("1rd_grade-btn");
+const threerdBtn = document.getElementById("3rd_grade-btn");
 
 const scohoolSiteBtn = document.getElementById("school_site")
 
 const closeBtn = document.getElementById("closeBtn");
+
+const topcloseBtn = document.getElementById("top-close-btn");
+
+const topopenBtn = document.getElementById("top-open-btn");
+
+topcloseBtn.addEventListener("click", async () => {
+    var elements = Array.from(document.getElementsByClassName('buttons'));
+    elements.forEach(function(element) {
+        element.className = 'hide-class';
+    });
+    topcloseBtn.style.display = "none";
+    topopenBtn.style.display = "block";
+    const topbar = document.querySelector(".topbar");
+    const topbarHeight = topbar.offsetHeight;
+    document.body.style.marginTop = `${topbarHeight+20}px`;
+});
+
+topopenBtn.addEventListener("click", async () => {
+    var elements = Array.from(document.getElementsByClassName('hide-class'));
+    elements.forEach(function(element) {
+        element.classList.remove('hide-class');
+        element.className = 'topbar-item buttons';
+    });
+    topopenBtn.style.display = "none";
+    topcloseBtn.style.display = "block";
+    const topbar = document.querySelector(".topbar");
+    const topbarHeight = topbar.offsetHeight;
+    document.body.style.marginTop = `${topbarHeight+20}px`;
+});
+
 
 const privacy_policy =document.getElementById("privacy_policy");
 
