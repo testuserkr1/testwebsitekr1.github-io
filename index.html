@@ -6,18 +6,26 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="topbar">
+    <div class="topbar" id="topbar">
         <div class="topbar-content" style="display: flex; justify-content: flex-start; align-items: center; width: 100%; padding-right: 20px;">
             <p style="text-align: left; margin-left: 60px; color: white; font-size: 24px; margin-right: 50px; font-family: 'Ownglyph_ParkDaHyun', sans-serif; background: linear-gradient(to bottom right, rgb(255, 82, 39), rgb(255, 243, 73)); color: transparent; -webkit-background-clip: text; box-sizing: border-box; letter-spacing: 1px;">
                 <strong>성사중학교 시험 알리미</strong>
             </p>
-            <button id="announcementBtn" class="topbar-item buttons" style="margin-right: 10px;">공지</button>
-            <button id="1rd_gradeBtn" class="topbar-item buttons" style="margin-right: 10px;">1학년</button>
-            <button id="2rd_gradeBtn" class="topbar-item buttons" style="margin-right: 10px;">2학년</button>
-            <button id="3rd_gradeBtn" class="topbar-item buttons" style="margin-right: 10px;">3학년</button>
+            <button id="announcement-btn" class="topbar-item buttons" style="margin-right: 10px;">공지</button>
+            <button id="1rd_grade-btn" class="topbar-item buttons" style="margin-right: 10px;">1학년</button>
+            <button id="2rd_grade-btn" class="topbar-item buttons" style="margin-right: 10px;">2학년</button>
+            <button id="3rd_grade-btn" class="topbar-item buttons" style="margin-right: 10px;">3학년</button>
             <button id="school_site" class="topbar-item buttons" style="margin-right: 10px;">학교사이트</button>
             <button id="privacy_policy" class="topbar-item buttons" style="margin-right: 10px;">저작권, 개인정보 처리 방침</button>
             <div style="margin-left: auto; padding-right: 20px; display: flex; align-items: center;">
+                <button id="top-close-btn" class="topbar-item google-button" style="margin-left: 20px;">
+                    <img src="image/최소화.png" alt="Google Logo" class="google-image" />
+                    <span class="google-text">Close</span>
+                </button>
+                <button id="top-open-btn" class="topbar-item google-button" style="margin-left: 20px; display: none;">
+                    <img src="image/최대화.png" alt="Google Logo" class="google-image" />
+                    <span class="google-text">Open</span>
+                </button>
                 <button id="login-btn" class="topbar-item google-button" style="margin-left: 20px;">
                     <img src="image/google.png" alt="Google Logo" class="google-image" />
                     <span class="google-text">Login with Google</span>
