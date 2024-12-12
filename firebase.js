@@ -329,8 +329,6 @@ document.addEventListener("click", async (e) => {
         const postElement = e.target.closest(".post-box, .qna-box");
         const postId = postElement?.dataset.postId;
 
-        console.log("postId:", postId);
-
         if (!postId) {
             console.error("PostId를 찾을 수 없습니다.");
             return;
@@ -755,8 +753,6 @@ document.addEventListener("click", async (e) => {
         const qnaId = e.target.dataset.qnaId;
         const qnaUserId = e.target.dataset.qnaUserId;
 
-        console.log(e.target.dataset)
-
         if (!qnaId || !qnaUserId) {
             console.error("포스트 ID 또는 포스트 ID를 찾을 수 없습니다.");
             return;
@@ -764,8 +760,6 @@ document.addEventListener("click", async (e) => {
 
         const postElement = e.target.closest(".qna-box");
         const postId = postElement?.dataset.postId;
-
-        console.log(postElement.dataset)
 
         if (!postId) {
             console.error("PostId를 찾을 수 없습니다.");
