@@ -15,6 +15,7 @@
             <button id="1rd_grade-btn" class="topbar-item buttons" style="margin-right: 10px;">1학년</button>
             <button id="2rd_grade-btn" class="topbar-item buttons" style="margin-right: 10px;">2학년</button>
             <button id="3rd_grade-btn" class="topbar-item buttons" style="margin-right: 10px;">3학년</button>
+            <button id="qua-btn" class="topbar-item buttons" style="margin-right: 10px;">질문게시판</button>
             <button id="school_site" class="topbar-item buttons" style="margin-right: 10px;">학교사이트</button>
             <button id="privacy_policy" class="topbar-item buttons" style="margin-right: 10px;">저작권, 개인정보 처리 방침</button>
             <div style="margin-left: auto; padding-right: 20px; display: flex; align-items: center;">
@@ -88,10 +89,10 @@
     </div>
 
     <h2 id="info" style="display: flex; justify-self: flex-start; align-items: center; font-family: 'GowunDodum-Regular'; padding-right: 20px;">게시물 목록</h2>
+    <div id="announcements" style="display: block;"></div>
+
     <div id="posts" style="display: none;"></div>
 
-    <div id="announcements" style="display: block;">
-    </div>
     <p id="Loading">Loading... 시간이 조금 걸립니다. 기다려주세요</p>
 
     <div id="input-div" style="display: flex; justify-content: flex-start; align-items: center;">
@@ -105,7 +106,15 @@
             <textarea id="post-content" placeholder="게시물의 내용을 입력하세요" required></textarea>
             <button type="submit">Post</button>
         </form>
+        <form id="qna-form" style="display: none; align-items: center;">
+            <input type="text" id="qna-title" placeholder="게시물의 제목을 입력하세요" required />
+            <textarea id="qna-content" placeholder="게시물의 내용을 입력하세요" required></textarea>
+            <button type="submit">Post</button>
+        </form>
     </div>
+
+    <div id="qna" style="display: none;"></div>
+
     <script type="module" src="firebase.js" defer></script>
     <script src="main.js"></script>
 </body>
