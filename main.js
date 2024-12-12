@@ -10,12 +10,25 @@ const onerdBtn = document.getElementById("1rd_grade-btn");
 const threerdBtn = document.getElementById("3rd_grade-btn");
 
 const scohoolSiteBtn = document.getElementById("school_site")
-
 const closeBtn = document.getElementById("closeBtn");
 
 const topcloseBtn = document.getElementById("top-close-btn");
-
 const topopenBtn = document.getElementById("top-open-btn");
+
+const quaBtn = document.getElementById("qua-btn");
+
+const qnaForm = document.getElementById("qna-form");
+
+quaBtn.addEventListener("click", async () => {
+    const qnaForm = document.getElementById("qna-form");
+    qnaForm.style.display = "block";
+    posts.style.display = "none";
+    threerd_grade_test.style.display = "none"
+    onerd_grade_test.style.display = "none"
+    announcements.style.display = "none";
+    info.style.display = "block";
+    qna.style.display = "block";
+});
 
 topcloseBtn.addEventListener("click", async () => {
     var elements = Array.from(document.getElementsByClassName('buttons'));
@@ -38,7 +51,7 @@ topopenBtn.addEventListener("click", async () => {
     topopenBtn.style.display = "none";
     topcloseBtn.style.display = "block";
     const topbar = document.querySelector(".topbar");
-    const topbarHeight = topbar.offsetHeight;
+    const topbarHeight = topbar.offsetHeight;z
     document.body.style.marginTop = `${topbarHeight+20}px`;
 });
 
@@ -70,6 +83,8 @@ twordBtn.addEventListener("click", async () => {
     onerd_grade_test.style.display = "none"
     announcements.style.display = "none";
     info.style.display = "block";
+    qnaForm.style.display = "none";
+    qna.style.display = "none";
 });
 
 annBtn.addEventListener("click", async () => {
@@ -78,6 +93,8 @@ annBtn.addEventListener("click", async () => {
     onerd_grade_test.style.display = "none"
     announcements.style.display = "block";
     info.style.display = "block";
+    qnaForm.style.display = "none";
+    qna.style.display = "none";
 });
 
 onerdBtn.addEventListener("click", async () => {
@@ -86,6 +103,8 @@ onerdBtn.addEventListener("click", async () => {
     onerd_grade_test.style.display = "block"
     announcements.style.display = "none";
     info.style.display = "none";
+    qnaForm.style.display = "none";
+    qna.style.display = "none";
 });
 
 threerdBtn.addEventListener("click", async () => {
@@ -94,5 +113,7 @@ threerdBtn.addEventListener("click", async () => {
     onerd_grade_test.style.display = "none"
     announcements.style.display = "none";
     info.style.display = "none";
+    qnaForm.style.display = "none";
+    qna.style.display = "none";
 });
 
