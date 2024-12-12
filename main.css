@@ -59,6 +59,36 @@
     resize: none;
 }
 
+.qna-form {
+    z-index: 999;
+    border: 1px solid #ddd;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.qna-content {
+    flex: 1;
+    margin-right: 10px;
+    resize: none;
+}
+
+.qna-box {
+    z-index: 999;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 .post-header {
     font-size: 1.4em;
     font-weight: bold;
