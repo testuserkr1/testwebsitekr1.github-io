@@ -162,6 +162,7 @@ const deleteComment = async (postId, commentId, commentUserId) => {
                 const docRef = doc(db, "replies", docSnapshot.id);
                 await deleteDoc(docRef);
             }
+            alert("댓글이 성공적으로 삭제되었습니다.");
             loadComments(postId);
         } else {
             alert("본인이 작성한 댓글만 삭제할 수 있습니다.");
@@ -177,6 +178,7 @@ const deleteComment = async (postId, commentId, commentUserId) => {
             const docRef = doc(db, "replies", docSnapshot.id);
             await deleteDoc(docRef);
         }
+        alert("댓글이 성공적으로 삭제되었습니다.");
         loadComments(postId);
     }
 };
@@ -203,7 +205,6 @@ document.addEventListener("click", async (e) => {
         if (confirm("정말로 이 댓글을 삭제하시겠습니까?")) {
             try {
                 await deleteComment(postId, commentId, commentUserId);
-                alert("댓글이 성공적으로 삭제되었습니다.");
             } catch (error) {
                 console.error("댓글 삭제 중 오류 발생:", error);
                 alert("댓글 삭제에 실패했습니다.");
@@ -282,7 +283,6 @@ document.addEventListener("click", async (e) => {
         if (confirm("정말로 이 답글을 삭제하시겠습니까?")) {
             try {
                 await deleteReply(postId, commentId, commentUserId);
-                alert("답글이 성공적으로 삭제되었습니다.");
             } catch (error) {
                 console.error("답글 삭제 중 오류 발생:", error);
                 alert("답글 삭제에 실패했습니다.");
@@ -313,6 +313,7 @@ const deleteReply = async (postId, commentId, commentUserId) => {
     }
 
     await deleteDoc(doc(db, "replies", commentId));
+    alert("답글이 성공적으로 삭제되었습니다.");
     loadComments(postId);
 };
 
@@ -322,7 +323,7 @@ document.addEventListener("click", async (e) => {
         const commentUserId = e.target.dataset.replyUserId;
 
         if (!commentId || !commentUserId) {
-            console.error("댓글 ID 또는 작성자 ID를 찾을 수 없습니다.");
+            console.error("답글 ID 또는 작성자 ID를 찾을 수 없습니다.");
             return;
         }
 
@@ -334,13 +335,12 @@ document.addEventListener("click", async (e) => {
             return;
         }
 
-        if (confirm("정말로 이 댓글을 삭제하시겠습니까?")) {
+        if (confirm("정말로 이 답글을 삭제하시겠습니까?")) {
             try {
                 await deleteReply(postId, commentId, commentUserId);
-                alert("댓글이 성공적으로 삭제되었습니다.");
             } catch (error) {
-                console.error("댓글 삭제 중 오류 발생:", error);
-                alert("댓글 삭제에 실패했습니다.");
+                console.error("답글 삭제 중 오류 발생:", error);
+                alert("답글 삭제에 실패했습니다.");
             }
         }
     }
@@ -720,6 +720,7 @@ const deleteqna = async (postId, UserId) => {
                     await deleteDoc(docRef);
                 }
             }
+            alert("질문이 성공적으로 삭제되었습니다.");
             loadqna();
         } else {
             alert("본인이 작성한 질문만 삭제할 수 있습니다.");
@@ -743,6 +744,7 @@ const deleteqna = async (postId, UserId) => {
                 await deleteDoc(docRef);
             }
         }
+        alert("질문이 성공적으로 삭제되었습니다.");
         loadqna();
     }
 };
@@ -769,7 +771,6 @@ document.addEventListener("click", async (e) => {
         if (confirm("정말로 이 질문을 삭제하시겠습니까?")) {
             try {
                 await deleteqna(postId, qnaUserId);
-                alert("질문이 성공적으로 삭제되었습니다.");
             } catch (error) {
                 console.error("질문 삭제 중 오류 발생:", error);
                 alert("질문 삭제에 실패했습니다.");
